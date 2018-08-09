@@ -9,7 +9,6 @@ You can implement inheritance
 You can clone a singleton class object
 Singleton class object creates in Heap memory
 
-
 Static 
 
 It will be initialized at the beginning time it self. and it will be available at the program.
@@ -17,8 +16,6 @@ Static class contains only static members
 You can't create instance of Static class
 static you can't implement inheritance
 Static class object creates in stack memory.
-
-
 
 SuppressFinalize()
 
@@ -28,3 +25,41 @@ cleaned up fully
 Normally, the CLR keeps tabs on objects with a finalizer when they are created (making them more expensive to create).
 SuppressFinalize tells the GC that the object was cleaned up properly and doesn't need to go onto the finalizer queue. 
 It looks like a C++ destructor, but doesn't act anything like one.
+
+use of "Delegate" 
+
+When you want to pass the methods as a parameter 
+Most important usage of delegate is event handling. Event Handlers are nothing but methods being pointed by delegates and called.
+It can also be used in Callbacks 
+Asynchronous processing
+When developer are not sure what logic is going to pass to complete an event or in method call
+
+What is diff between session storage, local storage and cookies,
+
+localStorage: stores data with no expiration date, and gets cleared only through JavaScript, or clearing the Browser Cache / 
+Locally Stored Data
+
+sessionStorage: similar to localStorage but expires when the browser closed (not the tab).
+
+Cookie: stores data that has to be sent back to the server with subsequent requests. Its expiration varies based on the type 
+and the expiration duration can be set from either server-side or client-side (normally from server-side).
+
+Absolute Position
+An absolute position element is positioned relative to the first parent element that has a position other than static.
+
+Relative Position
+A relative positioned element is positioned relative to its normal position.
+
+Process Table
+
+The operating system manages processes by the way of having the process table. For the system, each process is represented as an entry in the process table. Each entry of the given process is often known as process control block (PCB) or process table field. Each entry contains certain pieces of information about a process, and normally includes the following:
+
+Process state: How a process is being executed.
+Registers: Program counters (PC) and other sets of registers depending on the CPU architecture.
+Scheduling information: Priority, order of queue, and other scheduling parameters.
+Memory Management: Amount of allocated memory, etc.
+Identification: Process ID, user and group ID's of who owns the process, and permissions.
+Input / Output information: List of opened communications to the I/O, such as file descriptors and sockets.
+
+DP
+https://medium.com/search?q=Object-Oriented%20Analysis%20And%20Design%E2%80%8A
