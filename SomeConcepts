@@ -1,0 +1,30 @@
+
+Singleton
+
+It will be available when its needed in the program. 
+You dont need to allocate memory if its not required at the starting time of application. 
+class contains both static and non-static members
+You can create instance of Singleton class
+You can implement inheritance
+You can clone a singleton class object
+Singleton class object creates in Heap memory
+
+
+Static 
+
+It will be initialized at the beginning time it self. and it will be available at the program.
+Static class contains only static members
+You can't create instance of Static class
+static you can't implement inheritance
+Static class object creates in stack memory.
+
+
+
+SuppressFinalize()
+
+SuppressFinalize should only be called by a class that has a finalizer. It's informing the Garbage Collector (GC) that this object was
+cleaned up fully
+
+Normally, the CLR keeps tabs on objects with a finalizer when they are created (making them more expensive to create).
+SuppressFinalize tells the GC that the object was cleaned up properly and doesn't need to go onto the finalizer queue. 
+It looks like a C++ destructor, but doesn't act anything like one.
