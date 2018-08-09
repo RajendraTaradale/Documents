@@ -19,7 +19,8 @@ Static class object creates in stack memory.
 
 SuppressFinalize()
 
-SuppressFinalize should only be called by a class that has a finalizer. It's informing the Garbage Collector (GC) that this object was
+SuppressFinalize should only be called by a class that has a finalizer. It's informing the Garbage Collector (GC) that this object
+was
 cleaned up fully
 
 Normally, the CLR keeps tabs on objects with a finalizer when they are created (making them more expensive to create).
@@ -52,7 +53,9 @@ A relative positioned element is positioned relative to its normal position.
 
 Process Table
 
-The operating system manages processes by the way of having the process table. For the system, each process is represented as an entry in the process table. Each entry of the given process is often known as process control block (PCB) or process table field. Each entry contains certain pieces of information about a process, and normally includes the following:
+The operating system manages processes by the way of having the process table. For the system, each process is represented as an
+entry in the process table. Each entry of the given process is often known as process control block (PCB) or process table field. 
+Each entry contains certain pieces of information about a process, and normally includes the following:
 
 Process state: How a process is being executed.
 Registers: Program counters (PC) and other sets of registers depending on the CPU architecture.
@@ -71,7 +74,9 @@ Concurrent collection classes
 Using Synchronization Primitives
 
 What are Concurrent Collection Classes?
-.NET framework class library comes with Concurrent collection classes so that multiple threads can share collection data between them without using synchronization primitives.
+.NET framework class library comes with Concurrent collection classes so that multiple threads can share collection data between 
+them 
+without using synchronization primitives.
  
 There are four types of Concurrent classes.
 ConcurrentQueue
@@ -80,7 +85,9 @@ ConcurrentDictionary
 ConcurrentBag
 
 What is synchronization and why it is important?
-We use multiple threads to improve the performance of our application. When multiple threads shares data between there is a chance of data corruption. When one thread is writing to the variable another thread is reading the same variable at the same time there is a chance of reading corrupt data.
+We use multiple threads to improve the performance of our application. When multiple threads shares data between there is a chance of 
+data corruption. When one thread is writing to the variable another thread is reading the same variable at the same time there is a 
+chance of reading corrupt data.
  
 To stop the dirty reads we use synchronization primitives.
 
@@ -99,16 +106,40 @@ Barrier
 
 What is LiveLock?
 
-A livelock is very similar to deadlock except involved threads states are continually changing their state but still they cannot complete their work.
+A livelock is very similar to deadlock except involved threads states are continually changing their state but still they cannot 
+complete their work.
 
-A real-world example of livelock occurs when two people meet in a narrow corridor, and each tries to be polite by moving aside to let the other pass, but they end up swaying from side to side without making any progress because they both repeatedly move the same way at the same time.
+A real-world example of livelock occurs when two people meet in a narrow corridor, and each tries to be polite by moving aside to 
+let the other pass, but they end up swaying from side to side without making any progress because they both repeatedly move the same 
+way at the same time.
 
 What is AutoResetEvent?
 
-AutoResetEvent is a synchronization mechanism which work on a bool variable. If the bool variable is false then thread is blocked. If the bool variable is true then thread is unblocked.
+AutoResetEvent is a synchronization mechanism which work on a bool variable. If the bool variable is false then thread is blocked.
+If the bool variable is true then thread is unblocked.
 
 AutoResetEvent contains two main methods:
 
 WaitOne() : Blocks the current thread
 Set() : Unblock the current thread
 Reset() : Sets the state of the event to non-signaled.
+
+What is difference between Composition and Aggregation (Composition vs Aggregation)?
+
+Association is a relationship between two objects. This relationship may be one-o-one, one-to-many, many-to-one, and many-to-many.
+
+For e.g. a student and teacher objects have an association.
+
+Aggregation is a special case of association in which objects have a "has-a" relationship. 
+
+Composition is also a "has-a" relationship but It is a special case of Aggregation in which an object manages the life cycle of another object.
+
+For example, a library contains students and books. Relationship between library and students is Aggregation. Relationship between library and books is composition. A student can exist without a library and therefore it is aggregation. A book cannot exists without a library and therefore it is composition.
+
+What is Is-A and Has-A relationship?
+
+An inheritance relationship is an "is-a" relationship. A composition relationship is a "has-a" relationship.
+
+Can you use Order By clause in View?
+
+No, you can't use Order By clause in View. But if you use Top keyword in your query then you can use order by clause.
