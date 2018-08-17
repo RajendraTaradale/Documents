@@ -1,0 +1,16 @@
+Useful URLS
+
+Task and Task<T> :
+Tasks are constructs used to implement what is known as the Promise Model of Concurrency. In short, they offer you a "promise" that work will be completed at a later point, letting you coordinate with the promise with a clean API.
+
+Task represents a single operation which does not return a value.
+Task<T> represents a single operation which returns a value of type T.
+
+.NET provides us with two classes:
+
+CancellationTokenSource – object responsible for creating cancellation token and sending cancellation request to all copies of that token.
+CancellationToken – structure used by listeners to monitor token current state.
+
+https://docs.microsoft.com/en-us/dotnet/standard/async-in-depth
+
+https://binary-studio.com/2015/10/23/task-cancellation-in-c-and-things-you-should-know-about-it/
