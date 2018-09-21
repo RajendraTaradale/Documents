@@ -3,3 +3,12 @@ Some useful URL's
 https://github.com/highcharts  --for highchart and angular integration 
 
 https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b -- ALL LINQ
+
+
+The WeakSet object lets you store weakly held objects in a collection.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet
+
+The Set object lets you store unique values of any type, whether primitive values or object references.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
