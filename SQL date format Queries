@@ -33,3 +33,79 @@ SELECT convert(varchar, getdate(), 120) -- yyyy-mm-dd hh:mm:ss(24h)
 SELECT convert(varchar, getdate(), 121) -- yyyy-mm-dd hh:mm:ss.mmm
 
 SELECT convert(varchar, getdate(), 126) -- yyyy-mm-ddThh:mm:ss.mmm
+
+Custom Function date format in sql
+
+CREATE FUNCTION dbo.formatDateAsperInputType (@Datetime DATETIME, @FormatDateMask VARCHAR(32))
+
+RETURNS VARCHAR(32)
+
+AS
+
+BEGIN
+
+    DECLARE @StringDate VARCHAR(32)
+
+    SET @StringDates = @FormatDateMask
+
+    IF (CHARINDEX (‘YYYY’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘YYYY’,
+
+                         DATENAME(YY, @Datetime))
+
+    IF (CHARINDEX (‘YY’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘YY’,
+
+                         RIGHT(DATENAME(YY, @Datetime),2))
+
+    IF (CHARINDEX (‘Month’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘Month’,
+
+                         DATENAME(MM, @Datetime))
+
+    IF (CHARINDEX (‘MON’,@StringDate COLLATE SQL_Latin1_General_CP1_CS_AS)>0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘MON’,
+
+                         LEFT(UPPER(DATENAME(MM, @Datetime)),3))
+
+    IF (CHARINDEX (‘Mon’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘Mon’,
+
+                                     LEFT(DATENAME(MM, @Datetime),3))
+
+    IF (CHARINDEX (‘MM’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘MM’,
+
+                  RIGHT(’0′+CONVERT(VARCHAR,DATEPART(MM, @Datetime)),2))
+
+    IF (CHARINDEX (‘M’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDate, ‘M’,
+
+                         CONVERT(VARCHAR,DATEPART(MM, @Datetime)))
+
+    IF (CHARINDEX (‘DD’,@StringDate) > 0)
+
+       SET @StringDate = REPLACE(@StringDates, ‘DD’,
+
+                         RIGHT(’0′+DATENAME(DD, @Datetime),2))
+
+    IF (CHARINDEX (‘D’,@StringDate) > 0)
+
+       SET @StringDates = REPLACE(@StringDates, ‘D’,
+
+                                     DATENAME(DD, @Datetime))
+
+RETURN @StringDates
+
+END
+-----------------------
+to Call
+
+SELECT dbo.formatDateAsperInputType ('YourDate', 'YYYY-MM-DD') 
